@@ -1,0 +1,19 @@
+// в функциях четкое обозначение типа принимаемых параметров и возвращаемого значения, которое мы сами задаем
+function add(a, b) {
+    return a + b;
+}
+function toUpperCase(str) {
+    return str.trim().toUpperCase();
+}
+function position(a, b) {
+    if (!a && !b) {
+        return { x: undefined, y: undefined };
+    }
+    if (a && !b) {
+        return { x: a, y: undefined, "default": a.toString() };
+    }
+    return { x: a, y: b };
+}
+console.log('Empty: ', position());
+console.log('One param: ', position(42));
+console.log('Two paprams: ', position(10, 15));
